@@ -1,6 +1,6 @@
 package geometry;
 
-public class Point {
+public class Point extends Shape {
 	private int x;
 	private int y;
 	private boolean selected;
@@ -26,8 +26,14 @@ public class Point {
 		double d = Math.sqrt(dX*dX + dY*dY);
 		return d;
 	}
-	
-	
+	public boolean contains(int x, int y)
+	{
+		if(this.x == x && this.y == y)
+		{
+			return true;
+		}
+		return false;
+	}
 	
 
 	@Override
@@ -45,7 +51,19 @@ public class Point {
 		}
 		return false;
 	}
-
+	@Override
+	public void moveTo(int x, int y) 
+	{
+		this.x = x;
+		this.y = y;
+	}
+	@Override
+	public void moveBy(int x, int y)
+	{
+		this.x = this.x + x;
+		this.y = this.y + y;
+	}
+	
 	public int getX() {
 		return x;
 	}

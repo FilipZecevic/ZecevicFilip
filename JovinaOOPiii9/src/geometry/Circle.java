@@ -1,6 +1,6 @@
 package geometry;
 
-public class Circle {
+public class Circle extends Shape{
 	
 	private Point center;
 	private int r;
@@ -26,6 +26,11 @@ public class Circle {
 	
 	public double area() {
 		return r * r * Math.PI;
+	}
+	public boolean contains(int x, int y)
+	{
+		System.out.println("uradi za domaci");
+		return false;
 	}
 	
 	

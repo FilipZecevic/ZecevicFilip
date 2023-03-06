@@ -52,6 +52,11 @@ public class Donut extends Circle{
         }
         return false;
     }
+    public boolean contains(int x, int y)
+	{
+		System.out.println("uradi za domaci");
+		return false;
+	}
     
     
     public int getInnerR()

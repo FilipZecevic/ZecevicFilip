@@ -1,6 +1,6 @@
 package geometry;
 
-public class Rectangle {
+public class Rectangle extends Shape{
 	
 
 	public Point upperLeft;

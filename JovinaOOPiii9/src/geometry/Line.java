@@ -1,6 +1,6 @@
 package geometry;
 
-public class Line {
+public class Line extends Shape {
 	private Point startPoint;
 	private Point endPoint;
 	private boolean selected;
@@ -23,7 +23,11 @@ public class Line {
 	public double length() {
 		return startPoint.distance(endPoint.getX(), endPoint.getY());
 	}
-	
+	public boolean contains(int x, int y)
+	{
+		System.out.println("uradi za domaci");
+		return false;
+	}
 	
 
 	public Point getStartPoint() {
