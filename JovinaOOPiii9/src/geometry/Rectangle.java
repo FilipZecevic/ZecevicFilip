@@ -30,6 +30,14 @@ public class Rectangle extends Shape{
 	public int area() {
 		return width * height;
 	}
+	public boolean contains(int x, int y)
+	{
+		if(x >= this.upperLeft.getX() && x <= (this.upperLeft.getX() + this.width) && y <= this.upperLeft.getY() && y >= (this.upperLeft.getY() - this.height))
+			{
+				return true;
+			}
+		return false;
+	}
 	
 	
 	@Override
@@ -45,6 +53,18 @@ public class Rectangle extends Shape{
 			}
 		}
 		return false;
+	}
+	@Override
+	public void moveTo(int x, int y)
+	{
+		this.upperLeft.setX(x);
+		this.upperLeft.setY(y);
+	}
+	@Override
+	public void moveBy(int byX, int byY)
+	{
+		this.upperLeft.setX(this.upperLeft.getX() + byX);
+		this.upperLeft.setY(this.upperLeft.getY() + byY);
 	}
 	
 	public Point getUpperLeft() {

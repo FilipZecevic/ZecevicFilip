@@ -35,6 +35,29 @@ public class Donut extends Circle{
         return super.circumference() + innerR * 2 * Math.PI;
     }
     @Override
+    public boolean contains(int x, int y)
+    {
+    	if((super.getR() * super.getR() >= (x - super.getCenter().getX()) * (x - super.getCenter().getX()) + (y - super.getCenter().getY()) * (y - super.getCenter().getY())) &&
+    			(this.innerR * this.innerR <= (x - super.getCenter().getX()) * (x - super.getCenter().getX()) + (y - super.getCenter().getY()) * (y - super.getCenter().getY())))
+    	{
+    		return true;
+    	}
+    	
+    	return false;
+    }
+    @Override
+    public void moveTo(int x, int y)
+    {
+    	super.getCenter().setX(x);
+    	super.getCenter().setY(y);
+    }
+    @Override
+    public void moveBy(int byX, int byY)
+    {
+    	super.getCenter().setX(super.getCenter().getX() + byX);
+    	super.getCenter().setY(super.getCenter().getY() + byY);
+    }
+    @Override
     public String toString()
     {
         return super.toString() + "innerR: " + innerR;
@@ -52,11 +75,6 @@ public class Donut extends Circle{
         }
         return false;
     }
-    public boolean contains(int x, int y)
-	{
-		System.out.println("uradi za domaci");
-		return false;
-	}
     
     
     public int getInnerR()

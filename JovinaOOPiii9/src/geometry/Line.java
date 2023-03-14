@@ -25,7 +25,11 @@ public class Line extends Shape {
 	}
 	public boolean contains(int x, int y)
 	{
-		System.out.println("uradi za domaci");
+		if((y - this.startPoint.getY() == (this.endPoint.getY() - this.startPoint.getY())/(this.endPoint.getX() - this.startPoint.getX())*(x - this.startPoint.getX()))
+				&& (x >= this.startPoint.getX() && x <= this.endPoint.getX() || x <= this.startPoint.getX() && x >= this.endPoint.getX()) && (y >= this.startPoint.getY() && y <= this.endPoint.getY() || y <= this.startPoint.getY() && y >= this.endPoint.getY()))
+		{
+			return true;
+		}
 		return false;
 	}
 	
@@ -48,6 +52,18 @@ public class Line extends Shape {
 			}
 		}
 		return false;
+	}
+	@Override
+	public void moveTo(int x, int y)
+	{
+		this.startPoint.setX(x);
+		this.startPoint.setY(y);
+	}
+	@Override
+	public void moveBy(int byX, int byY)
+	{
+		this.startPoint.setX(this.startPoint.getX()+byX);
+		this.startPoint.setY(this.startPoint.getY()+byY);
 	}
 
 	public void setStartPoint(Point startPoint) {

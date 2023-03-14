@@ -29,7 +29,10 @@ public class Circle extends Shape{
 	}
 	public boolean contains(int x, int y)
 	{
-		System.out.println("uradi za domaci");
+		if(this.r * this.r >= (x - this.center.getX()) * (x - this.center.getX()) + (y - this.center.getY()) * (y - this.center.getY()))
+			{
+				return true;
+			}
 		return false;
 	}
 	
@@ -52,7 +55,18 @@ public class Circle extends Shape{
 		}
 		return false;
 	}
-
+	@Override
+	public void moveTo(int x, int y)
+	{
+		this.center.setX(x);
+		this.center.setY(y);
+	}
+	@Override
+	public void moveBy(int byX, int byY)
+	{
+		this.center.setX(this.center.getX() + byX);
+		this.center.setY(this.center.getY() + byY);
+	}
 	public Point getCenter() {
 		return center;
 	}
