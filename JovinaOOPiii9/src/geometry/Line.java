@@ -58,12 +58,16 @@ public class Line extends Shape {
 	{
 		this.startPoint.setX(x);
 		this.startPoint.setY(y);
+		this.endPoint.setX(this.startPoint.getX() - x);
+		this.endPoint.setY(this.startPoint.getY() - y);
 	}
 	@Override
 	public void moveBy(int byX, int byY)
 	{
 		this.startPoint.setX(this.startPoint.getX()+byX);
 		this.startPoint.setY(this.startPoint.getY()+byY);
+		this.endPoint.setX(this.startPoint.getX()+byX);
+		this.endPoint.setY(this.startPoint.getY()+byY);
 	}
 
 	public void setStartPoint(Point startPoint) {
