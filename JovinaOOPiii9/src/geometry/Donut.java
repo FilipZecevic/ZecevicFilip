@@ -37,8 +37,7 @@ public class Donut extends Circle{
     @Override
     public boolean contains(int x, int y)
     {
-    	if((super.getR() * super.getR() >= (x - super.getCenter().getX()) * (x - super.getCenter().getX()) + (y - super.getCenter().getY()) * (y - super.getCenter().getY())) &&
-    			(this.innerR * this.innerR <= (x - super.getCenter().getX()) * (x - super.getCenter().getX()) + (y - super.getCenter().getY()) * (y - super.getCenter().getY())))
+    	if(super.getR() >= super.getCenter().distance(x, y) && this.innerR <= super.getCenter().distance(x, y))
     	{
     		return true;
     	}

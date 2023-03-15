@@ -29,7 +29,7 @@ public class Circle extends Shape{
 	}
 	public boolean contains(int x, int y)
 	{
-		if(this.r * this.r >= (x - this.center.getX()) * (x - this.center.getX()) + (y - this.center.getY()) * (y - this.center.getY()))
+		if(this.r >= this.center.distance(x, y))
 			{
 				return true;
 			}
